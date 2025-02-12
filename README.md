@@ -9,5 +9,4 @@ To build the backend of this project, we are using Node.js, Express.js, and MySQ
 --run the commands of setup_database.sql into the MySQL Workbench.  
 --Now we have to change the environment variables of the project, so go to the ".env" file and change the variables according to you.  
 --All the setup is done.  
---Now run "node app.js" on the terminal, and our server is started.  
 --Access the application in your browser at http://localhost:3000.  
