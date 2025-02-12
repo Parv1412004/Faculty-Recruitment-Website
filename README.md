@@ -10,4 +10,4 @@ To build the backend of this project, we are using Node.js, Express.js, and MySQ
 --Now we have to change the environment variables of the project, so go to the ".env" file and change the variables according to you.  
 --All the setup is done.  
 --Now run "node app.js" on the terminal, and our server is started.  
---You can go live and run a website.  
+--Access the application in your browser at http://localhost:3000.  
