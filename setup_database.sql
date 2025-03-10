@@ -43,5 +43,17 @@ create table page8data(
 );
 create table page8file(
 	jwt_token varchar(255) primary key,
-    data text
+    data text,
+    f1 text,
+    f2 text,
+    f3 text,
+    f4 text,
+    f5 text,
+    f6 text,
+    f7 text,
+    f8 text,
+    f9 text,
+    f10 text,
+    f11 text,
+    f12 text
 );

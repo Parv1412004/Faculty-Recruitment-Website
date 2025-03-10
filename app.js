@@ -1,6 +1,3 @@
-//Project for CS260 DataBase Lab
-// Roll no :-- 2201CS91, 2201CS74
-
 const express = require('express');
 const urlencoded = express.urlencoded;
 const mysql = require('mysql2');
@@ -63,13 +60,6 @@ async function Signup(firstname,lastname,email,category,password,repassword){
     return {"success":true,"message":"Account Created Sucessfully!"};
 }
 
-// async function storetoken(token){
-//     await pool.query(`
-//     INSERT INTO jwt_tokens (token)
-//     VALUES (?)
-//     `, [token])
-// }
-
 async function Login(email,password){
     let val = await checkemail(email)
     //console.log(val,password);
@@ -81,19 +71,28 @@ async function Login(email,password){
     const ans = await bcrypt.compare(password,user.pass_word)
     //console.log(ans)
     if(ans){
-        const payload = {
-            email : email,
-            password:password
-        };
-        //let token = jwt.sign(payload,process.env.JWT_SECRET);
-        //await storetoken(token);
+        const name = await getName(email);
+        console.log(name);
         console.log("Logged in sucessfully.")
-        return {"success":true,"message":"Sucessfully Logged in.","user":email};
+        return {"success":true,"message":"Sucessfully Logged in.","user":email,"firstName":name.firstname,"lastName":name.lastname};
     }
     else{
         return {"success":false,"message":"Incorrect Password."};
     }
 }
+
+
+async function getName(email) {
+    const result = await pool.query(
+        `SELECT firstname, lastname FROM iitpatna WHERE email = ?`, 
+        [email]
+    );
+    //console.log(result[0][0].firstname);
+    const { firstname, lastname } = result[0][0];
+    //console.log(firstname,lastname)
+    return { exists: true, firstname, lastname };
+}
+
 
 async function checkemail(email){
     //console.log(email)
@@ -408,12 +407,12 @@ app.listen(process.env.PORT,(req,res)=>{
     console.log("Server started.")
 })
 
-app.use(session({
-    secret: 'your_secret_key',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-}))
+// app.use(session({
+//     secret: 'your_secret_key',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: true }
+// }))
 
 app.post('/login',async (req,res)=>{
     //console.log(req.body)
@@ -427,7 +426,7 @@ app.post('/login',async (req,res)=>{
 })
 
 app.post('/signup',async (req,res)=>{
-    console.log(req.body)
+    //console.log(req.body)
     const {firstname,lastname,email,category,password,repassword} = req.body;
     //console.log(password,repassword);
     const response = await Signup(firstname,lastname,email,category,password,repassword);
@@ -441,17 +440,17 @@ app.post('/datapage1',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage1(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
 app.post('/datapage2',async (req,res)=>{
-    console.log(req.body)
+    //console.log(req.body)
     const data = JSON.stringify(req.body);
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage2(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -461,7 +460,7 @@ app.post('/datapage3',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage3(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -471,7 +470,7 @@ app.post('/datapage4',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage4(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -481,7 +480,7 @@ app.post('/datapage5',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage5(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -491,7 +490,7 @@ app.post('/datapage6',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage6(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -501,7 +500,7 @@ app.post('/datapage8',async (req,res)=>{
     //let togetuser = await data.json();
     //console.log(req.body["User"])
     const response = await storepage8(req.body["User"],data);
-    console.log(response);
+    //console.log(response);
     res.send(response);
 })
 
@@ -633,7 +632,7 @@ app.post("/upload", upload.fields([
         console.log('f1')
         //console.log(req.files["1"][0].originalname);
         let respo = await storepage8_2(req.body["user"],req.files["1"][0].originalname,"f1");
-        console.log(respo["success"]);
+        //console.log(respo["success"]);
         if(respo["success"]!==true){
             console.log('f')
             sucess=false;
@@ -730,7 +729,7 @@ app.post("/upload", upload.fields([
 app.post('/view',async (req,res)=>{
     //console.log(req.body);
     let result = await getpage8_2(req.body["user"],"f".concat(req.body["part"]));
-    console.log(result);
+    //console.log(result);
     //console.log(result[0][0]);
     if(result["sucess"]){
         result = result[0][0]

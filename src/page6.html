@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <script src="page6_js.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header id="heading">
+        <span id="heading1">भारतीय प्रौद्योगिकी संस्थान पटना</span>
+        <span id="heading2">Indian Institute of Technology Patna</span>
+    </header>
+    <div id="banner">
+        <span id="banner-content">Application for Faculty Position</span>
+    </div>
+
+
+    <form id="block5">
+        <div class="overall" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="temp">
+                <div id="container" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <h3 id="welcome-text">Welcome</h3>
+
+                    <script>
+                        const name = JSON.parse(localStorage.getItem('name'));
+                        // console.log("name");
+                        // console.log(name);
+                        if (name) {
+                            try {
+                                document.getElementById("welcome-text").textContent = `Welcome ${name.firstName} ${name.lastName}`;
+                            } catch (error) {
+                                console.error("Invalid token");
+                            }
+                        }
+                    </script>
+                    <div class="button-container" style="display: flex; align-items: center; justify-content: center;">
+                        <a href="/src/login.html" class="next-page-button">Logout</a>
+                    </div>
+                </div>
+                
+            </div>
+        
+        
+            <!-- (A) PhD Thesis Supervision   -->
+                    
+                       
+            <div class="temp">
+                <div id="container">
+                    <h2>13. Research Supervision:</h2>
+                    <div id="title">
+                        <span>(A) PhD Thesis Supervision  </span>
+                        <button class="addmore" id = "addmoretable1p6">Add More</button>
+                    </div>
+                    <div id="body">
+                        <table class="table" id = "table1p6">
+                            <tr>
+                              <th>S. No.</th>
+                              <th>Name of Student/Research Scholar</th>
+                              <th>Title of Thesis</th>
+                              <th>Role</th>
+                              <th>Ongoing/Completed	</th>
+                              <th>Ongoing Since/ Year of Completion</th>
+                              <!-- <th>Percentage/CGPA</th>
+                              <th>Division/Class</th> -->
+                              <th>Delete</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="299" name="299"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="300" name="300"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="301" name="301"/></td>
+                                <td><input type="text" placeholder="Role" required id="302" name="302"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="303" name="303"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="304" name="304"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="305" name="305"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="306" name="306"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="307" name="307"/></td>
+                                <td><input type="text" placeholder="Role" required id="308" name="308"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="309" name="309"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="310" name="310"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="311" name="311"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="312" name="312"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="313" name="313"/></td>
+                                <td><input type="text" placeholder="Role" required id="314" name="314"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="315" name="315"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="316" name="316"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <!--(B). M.Tech/M.E./Master's Degree   -->
+                    
+                       
+            <div class="temp">
+                <div id="container">
+                    <div id="title">
+                        <span>(B). M.Tech/M.E./Master's Degree  </span>
+                        <button class="addmore" id = "addmoretable2p6">Add More</button>
+                    </div>
+                    <div id="body">
+                        <table class="table" id = "table2p6">
+                            <tr>
+                              <th>S. No.</th>
+                              <th>Name of Student/Research Scholar</th>
+                              <th>Title of Thesis</th>
+                              <th>Role</th>
+                              <th>Ongoing/Completed	</th>
+                              <th>Ongoing Since/ Year of Completion</th>
+                              <!-- <th>Percentage/CGPA</th>
+                              <th>Division/Class</th> -->
+                              <th>Delete</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="317" name="317"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="318" name="318"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="319" name="319"/></td>
+                                <td><input type="text" placeholder="Role" required id="320" name="320"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="321" name="321"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="322" name="322"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="323" name="323"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="324" name="324"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="325" name="325"/></td>
+                                <td><input type="text" placeholder="Role" required id="326" name="326"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="327" name="327"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="328" name="328"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="329" name="329"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="330" name="330"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="331" name="331"/></td>
+                                <td><input type="text" placeholder="Role" required id="332" name="332"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="333" name="333"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="334" name="334"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+               <!--(C) B.Tech/B.E./Bachelor's Degree  -->
+                    
+                       
+               <div class="temp">
+                <div id="container">
+                    <div id="title">
+                        <span>(C) B.Tech/B.E./Bachelor's Degree  </span>
+                        <button class="addmore" id = "addmoretable3p6">Add More</button>
+                    </div>
+                    <div id="body">
+                        <table class="table" id = "table3p6">
+                            <tr>
+                              <th>S. No.</th>
+                              <th>Name of Student/Research Scholar</th>
+                              <th>Title of Thesis</th>
+                              <th>Role</th>
+                              <th>Ongoing/Completed	</th>
+                              <th>Ongoing Since/ Year of Completion</th>
+                              <!-- <th>Percentage/CGPA</th>
+                              <th>Division/Class</th> -->
+                              <th>Delete</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="335" name="335"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="336" name="336"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="337" name="337"/></td>
+                                <td><input type="text" placeholder="Role" required id="338" name="338"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="339" name="339"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="340" name="340"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="341" name="341"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="342" name="342"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="343" name="343"/></td>
+                                <td><input type="text" placeholder="Role" required id="344" name="344"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="345" name="345"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="346" name="346"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="S.No." required  id="347" name="347"/></td>
+                                <td><input type="text" placeholder="Name of Student/Research Scholar" required id="348" name="348"/></td>
+                                <td><input type="text" placeholder="Title of Thesis" required id="349" name="349"/></td>
+                                <td><input type="text" placeholder="Role" required id="350" name="350"/></td>
+                                <td><input type="text" placeholder="Ongoing/Completed" required id="351" name="351"/></td>
+                                <td><input type="text" placeholder="Ongoing Since/ Year of Completion" required id="352" name="352"/></td>
+                                <!-- <td><input type="text" placeholder="Percentage" required/></td>
+                                <td><input type="text" placeholder="Percentage" required/></td> -->
+                                <!-- <td class="delete"><button class="deletebtn">X</button></td> -->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="temp">
+                <div id="container">
+                    <div class="button-container">
+                        <a href="/src/page5.html" class="back-page-button">Back Page</a>
+                        <button class="next-page-button" type="submit">Next Page</button>
+                    </div>
+                </div>
+        
+        
+                
+                
+            </div>
+        </div>
+
+
+    </form>
+
+
+    
+
+    <script src="page6.js"></script>
+</body>
+</html>
