@@ -61,13 +61,6 @@ addmoretabledp3.addEventListener('click',()=>{
 </tr>`
 });
 
-// function ondelete(e){
-//     if(!e.target.classList.contains("deletebtn")){
-//         return;
-//     }
-//     const deletebtn = e.target;
-//     deletebtn.closest("tr").remove();
-// }
 
 
 tabledp3.addEventListener('click', ondelete);
@@ -94,13 +87,6 @@ addmoretablecp3.addEventListener('click',()=>{
 </tr>`
 });
 
-// function ondelete(e){
-//     if(!e.target.classList.contains("deletebtn")){
-//         return;
-//     }
-//     const deletebtn = e.target;
-//     deletebtn.closest("tr").remove();
-// }
 
 
 tablecp3.addEventListener('click', ondelete);

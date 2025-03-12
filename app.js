@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const session = require('express-session');
 const multer = require('multer');
 const puppeteer = require('puppeteer');
 const {PDFDocument} = require('pdf-lib');
@@ -407,13 +406,6 @@ app.listen(process.env.PORT,(req,res)=>{
     console.log("Server started.")
 })
 
-// app.use(session({
-//     secret: 'your_secret_key',
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { secure: true }
-// }))
-
 app.post('/login',async (req,res)=>{
     //console.log(req.body)
     const {email,password} = req.body;
@@ -775,7 +767,8 @@ async function generatePDFfromMultipleURLs(urls, outputPath) {
 }
 
 app.post('/pdf',async (req,res)=>{
-    const urls = [`http://127.0.0.1:${req.body["port"]}/page1.html`, `http://127.0.0.1:${req.body["port"]}/page2.html`, `http://127.0.0.1:${req.body["port"]}/page3.html`,`http://127.0.0.1:${req.body["port"]}/page4.html`,`http://127.0.0.1:${req.body["port"]}/page5.html`,`http://127.0.0.1:${req.body["port"]}/page6.html`];
+    console.log(req.body.port);
+    const urls = [`http://127.0.0.1:${req.body["port"]}/src/page1.html`, `http://127.0.0.1:${req.body["port"]}/src/page2.html`, `http://127.0.0.1:${req.body["port"]}/src/page3.html`,`http://127.0.0.1:${req.body["port"]}/src/page4.html`,`http://127.0.0.1:${req.body["port"]}/src/page5.html`,`http://127.0.0.1:${req.body["port"]}/src/page6.html`];
     let respo = await generatePDFfromMultipleURLs(urls, 'application.pdf')
     console.log('PDF generated successfully')
     console.log(respo);

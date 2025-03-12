@@ -1,13 +1,6 @@
-// import dotenv from 'dotenv'
-// dotenv.config()
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('myloginform');
-    // const signup = document.querySelector('.signupButton');
-    // signup.addEventListener('click',()=>{
-    //     window.location.href = `http://127.0.0.1:${process.env.WEB_PORT}/signup.html`
-    // })
-    //login
     form.addEventListener('submit',async function(e) {
         // Prevent default behavior:
         e.preventDefault();
@@ -37,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // }
         // console.log("Details");
         // console.log(response);
+        const notyf = new Notyf({
+            duration: 3000,  // Time toast is visible
+            position: { x: "right", y: "top" },  // Position of the toast
+        });
         if(response["success"]){
             // Save the user data in local storage:
             //console.log(response);
@@ -47,9 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 lastName: response.lastName
             }))
             // Redirect to the next page:
-            window.location.href = '/src/page1.html';
+            notyf.success('Login Successfull!');
+            setTimeout(() => {
+                window.location.href = "/src/page1.html";
+            }, 1000); // Same duration as the Notyf toast
         }
         else{
+            notyf.error('Login Failed');
             console.log("Wrong user details!")
         }
     })

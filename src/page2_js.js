@@ -6,8 +6,6 @@ window.onload = function() {
         window.location.href = '/src/login.html';
     }
 
-    // Load user-specific data
-    // ...
 };
 
 
@@ -85,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const logoutbtn = document.querySelector(".next-page-button");
     logoutbtn.addEventListener('click',function (){
         localStorage.removeItem('user');
-
+        localStorage.removeItem('name');
         // Redirect to the login page:
         window.location.href = '/src/login.html';
     })

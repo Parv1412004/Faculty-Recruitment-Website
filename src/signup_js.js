@@ -28,7 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
         //     var message = response[key]
         // }
         //console.log(response.message)
-        if(response.success) window.location.href = '/src/login.html' 
+        const notyf = new Notyf({
+            duration: 3000,  // Time toast is visible
+            position: { x: "right", y: "top" },  // Position of the toast
+        });
+        if(response.success){
+            notyf.success('Registration Successfull!');
+            setTimeout(() => {
+                window.location.href = "/src/login.html";
+            }, 1000); // Same duration as the Notyf toast
+        }
+        else{
+            notyf.error('Registration Failed');
+        }
     })
 });
 
